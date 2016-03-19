@@ -6,6 +6,8 @@ im1 = cv2.imread('./slides/no-u-final-slide525.png')
 im2 = cv2.imread('./slides/no-u-final-slide648.png')
 
 results =  corrConv.fastCorr(im1, im2, 5)
+results = results * 255
+results = results.astype(np.uint8)
 
 cv2.imshow('results',results)
 cv2.waitKey(0)
